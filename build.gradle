@@ -24,5 +24,5 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.2.2.RELEASE'
 }
