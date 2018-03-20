@@ -1,8 +1,12 @@
 package com.silva.giflib.Controller;
 
+import com.silva.giflib.model.Gif;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.time.LocalDate;
 
 @Controller
 public class GifController {
@@ -12,6 +16,17 @@ public class GifController {
         return "home";
     }
 
+    @RequestMapping("/gif")
+    public String gifDetails(ModelMap modelMap) {
+        Gif gif = new Gif
+                ("compiler-bot",
+                        LocalDate.of(2015,2,13),
+                        "SergioSilva",
+                        true);
 
+        modelMap.put("gif", gif);
+
+        return "gif-details";
+    }
 
 }
